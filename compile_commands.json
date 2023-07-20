@@ -1,0 +1,67 @@
+[
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDCloseRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDCloseRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDCloseRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDCreateRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDCreateRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDCreateRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDDestroyRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDDestroyRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDDestroyRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDGetReportReplyRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDGetReportReplyRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDGetReportReplyRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDGetReportRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDGetReportRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDGetReportRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDInputRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDInputRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDInputRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDOpenRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDOpenRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDOpenRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDOutputRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDOutputRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDOutputRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDSetReportReplyRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDSetReportReplyRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDSetReportReplyRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDSetReportRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDSetReportRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDSetReportRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDStartRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDStartRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDStartRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/requests/UHIDStopRequest.cc.o -c /home/tayler/Programming/node-uhid/src/requests/UHIDStopRequest.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/requests/UHIDStopRequest.cc"
+},
+{
+  "directory": "/home/tayler/Programming/node-uhid/build",
+  "command": "/usr/bin/clang++ -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20 -o CMakeFiles/node-uhid.dir/src/uhid.cc.o -c /home/tayler/Programming/node-uhid/src/uhid.cc",
+  "file": "/home/tayler/Programming/node-uhid/src/uhid.cc"
+}
+]
