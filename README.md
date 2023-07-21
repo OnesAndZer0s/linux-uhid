@@ -10,9 +10,8 @@ npm install linux-uhid
 ```javascript
 const uhid = require('linux-uhid');
 
-// Create a new device
 var device = new UHIDDevice();
-// open device
+
 device.open();
 
 device.create( {
@@ -28,7 +27,7 @@ device.create( {
 // Send input report
 device.input( Buffer.from( hid_input_report ));
 ```
-Look at `test.ts` for examples.
+Look at `test.ts` for an example of a mouse.
 ## Todo
 - [ ] Add documentation.
 - [x] Add TypeScript support.
