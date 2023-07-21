@@ -1,8 +1,12 @@
 .cache/**
 .vscode/**
-build/**
 node_modules/**
 compile_commands.json
 
 yarn-error.log
 yarn.lock
+
+build/*
+!build/UHIDDevice.js
+!build/UHIDDevice.d.ts
+!build/Release

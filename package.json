@@ -6,6 +6,10 @@
     "type": "git",
     "url": "https://github.com/OnesAndZer0s/node-uhid.git"
   },
+  "main": "build/UHIDDevice.js",
+  "types": "build/UHIDDevice.d.ts",
+  "author": "OnesAndZer0s",
+  "license": "GNU",
   "dependencies": {
     "bindings": "~1.2.1",
     "node-addon-api": "latest"
@@ -13,6 +17,7 @@
   "scripts": {
     "start": "ts-node test.ts",
     "build:dev": "cmake-js -j 16 build -D",
+    "build:ts": "tsc",
     "build": "cmake-js -j 16 build",
     "rebuild:dev": "cmake-js -j 16 rebuild -D",
     "rebuild": "cmake-js -j 16 rebuild",
