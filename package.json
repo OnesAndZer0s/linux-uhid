@@ -1,0 +1,20 @@
+{
+  "name": "node-uhid",
+  "version": "0.0.0",
+  "description": "NodeJS Bindings for Linux's UHID kernel module",
+  "dependencies": {
+    "bindings": "~1.2.1",
+    "node-addon-api": "latest"
+  },
+  "scripts": {
+    "start": "ts-node test.ts",
+    "build:dev": "cmake-js -j 16 build -D",
+    "build": "cmake-js -j 16 build",
+    "rebuild:dev": "cmake-js -j 16 rebuild -D",
+    "rebuild": "cmake-js -j 16 rebuild",
+    "clean": "cmake-js clean"
+  },
+    "devDependencies": {
+    "@types/bindings": "^1.5.1"
+  }
+}
