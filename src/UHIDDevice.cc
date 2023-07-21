@@ -1,19 +1,10 @@
 #include "src/UHIDDevice.h"
 
-#include <charconv>
-#include <errno.h>
 #include <fcntl.h>
-#include <iostream>
 #include <linux/input.h>
 #include <linux/uhid.h>
 #include <napi.h>
 #include <poll.h>
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <termios.h>
-#include <unistd.h>
 
 Napi::Object UHIDDevice::Init( Napi::Env env, Napi::Object exports ) {
   Napi::Function func =
@@ -24,7 +15,6 @@ Napi::Object UHIDDevice::Init( Napi::Env env, Napi::Object exports ) {
               InstanceAccessor< &UHIDDevice::IsOpen >( "isOpen" ),
               InstanceMethod( "poll", &UHIDDevice::Poll ),
 
-              // write operations
               InstanceMethod( "create", &UHIDDevice::Create ),
               InstanceMethod( "destroy", &UHIDDevice::Destroy ),
               InstanceMethod( "input", &UHIDDevice::Input ),
@@ -223,11 +213,11 @@ void UHIDDevice::Poll( const Napi::CallbackInfo& info ) {
   if( fd < 0 )
     return;
 
-  struct pollfd pfds [ 2 ];
-  pfds [ 0 ].fd = STDIN_FILENO;
-  pfds [ 0 ].events = POLLIN;
-  pfds [ 1 ].fd = fd;
-  pfds [ 1 ].events = POLLIN;
+  struct pollfd* pfds;
+  pfds->fd = fd;
+  pfds->events = POLLIN;
+  // pfds [ 1 ].fd = fd;
+  // pfds [ 1 ].events = POLLIN;
 
   int ret = poll( pfds, 2, -1 );
   if( ret < 0 ) {
@@ -235,28 +225,28 @@ void UHIDDevice::Poll( const Napi::CallbackInfo& info ) {
     perror( "poll" );
     return;
   }
-  if( pfds [ 0 ].revents & POLLHUP )
-    fprintf( stderr, "Received HUP on stdin\n" );
-  if( pfds [ 1 ].revents & POLLHUP )
+  // if( pfds [ 0 ].revents & POLLHUP )
+  //   fprintf( stderr, "Received HUP on stdin\n" );
+  if( pfds->revents & POLLHUP )
     fprintf( stderr, "Received HUP on uhid-cdev\n" );
 
-  if( pfds [ 0 ].revents & POLLIN ) {
-    // keyboard
-    fprintf( stderr, "BEEKOARDv\n" );
+  // if( pfds [ 0 ].revents & POLLIN ) {
+  // keyboard
+  // fprintf( stderr, "BEEKOARDv\n" );
 
-    // char buf [ 1024 ];
-    // ssize_t ret = read( STDIN_FILENO, buf, sizeof( buf ) );
-    // if( ret < 0 ) {
-    //   perror( "read" );
-    //   return;
-    // }
-    // if( ret == 0 ) {
-    //   fprintf( stderr, "EOF on stdin\n" );
-    //   return;
-    // }
-    // fprintf( stderr, "Read %zd bytes from stdin\n", ret );
-  }
-  if( pfds [ 1 ].revents & POLLIN ) {
+  // char buf [ 1024 ];
+  // ssize_t ret = read( STDIN_FILENO, buf, sizeof( buf ) );
+  // if( ret < 0 ) {
+  //   perror( "read" );
+  //   return;
+  // }
+  // if( ret == 0 ) {
+  //   fprintf( stderr, "EOF on stdin\n" );
+  //   return;
+  // }
+  // fprintf( stderr, "Read %zd bytes from stdin\n", ret );
+  // }
+  if( pfds->revents & POLLIN ) {
     struct uhid_event ev;
     ssize_t ret;
 
@@ -292,7 +282,7 @@ void UHIDDevice::Poll( const Napi::CallbackInfo& info ) {
         {
           Napi::Object retVal = Napi::Object::New( info.Env() );
           retVal.Set( "data", Napi::Buffer< uint8_t >::Copy( info.Env(), ev.u.output.data, ev.u.output.size ) );
-          retVal.Set( "rtType", ev.u.output.rtype );
+          retVal.Set( "rtype", ev.u.output.rtype );
           eventEmitter.Call( { Napi::String::New( info.Env(), "output" ), retVal } );
           break;
         }
@@ -317,18 +307,7 @@ void UHIDDevice::Poll( const Napi::CallbackInfo& info ) {
           break;
         }
       default:
-        fprintf( stderr, "Invalid event from uhid-dev: %u\n", ev.type );
+        Napi::Error::New( info.Env(), "Invalid event from uhid-dev: " + std::to_string( ev.type ) + "\n" ).ThrowAsJavaScriptException();
     }
   }
 }
-
-/* reads :
-start
-stop
-open
-close
-output
-
-get report
-set report
-*/

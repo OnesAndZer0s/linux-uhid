@@ -12,7 +12,7 @@
       "terminal": "integrated",
       "preLaunchTask": "npm: build:dev",
       "args": [
-        "hello.js"
+        "test.js"
       ],
       "cwd": "${workspaceFolder}",
     }

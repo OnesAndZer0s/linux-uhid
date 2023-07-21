@@ -83,3 +83,17 @@
 900	956	1689963644	Debug/node-uhid.node	77b06e4df1d9ad5f
 1	852	1689963896	CMakeFiles/node-uhid.dir/src/UHIDDevice.cc.o	642f469d6830395c
 852	909	1689963897	Debug/node-uhid.node	77b06e4df1d9ad5f
+1	994	1689972496	CMakeFiles/node-uhid.dir/src/uhid.cc.o	175a24141e3ebbee
+1	1140	1689972496	CMakeFiles/node-uhid.dir/src/UHIDDevice.cc.o	642f469d6830395c
+1140	1200	1689972496	Debug/node-uhid.node	77b06e4df1d9ad5f
+1	853	1689972800	CMakeFiles/node-uhid.dir/src/UHIDDevice.cc.o	642f469d6830395c
+853	917	1689972800	Debug/node-uhid.node	77b06e4df1d9ad5f
+1	1011	1689972953	CMakeFiles/node-uhid.dir/src/uhid.cc.o	b8f3c30d69ade193
+0	1083	1689972953	CMakeFiles/node-uhid.dir/src/UHIDDevice.cc.o	f7d2c230da951da6
+1083	1154	1689972953	Debug/node-uhid.node	5b191c8f13fa056b
+1	752	1689973065	CMakeFiles/node-uhid.dir/src/UHIDDevice.cc.o	f7d2c230da951da6
+752	821	1689973066	Debug/node-uhid.node	5b191c8f13fa056b
+0	744	1689973081	CMakeFiles/node-uhid.dir/src/UHIDDevice.cc.o	f7d2c230da951da6
+744	814	1689973081	Debug/node-uhid.node	5b191c8f13fa056b
+1	751	1689973098	CMakeFiles/node-uhid.dir/src/UHIDDevice.cc.o	f7d2c230da951da6
+751	820	1689973098	Debug/node-uhid.node	5b191c8f13fa056b

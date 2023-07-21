@@ -27,7 +27,7 @@ class UHIDAddon : public Napi::Addon< UHIDAddon > {
 
                                 // InstanceAccessor< &UHIDAddon::IsOpen >( "isOpen" ),
 
-                                InstanceAccessor< &UHIDAddon::UHID_Event_Type >( "UHIDRequestType" ),
+                                // InstanceAccessor< &UHIDAddon::UHID_Event_Type >( "UHIDRequestType" ),
                                 InstanceAccessor< &UHIDAddon::UHID_Bus_Type >( "UHIDBusType" ),
                                 InstanceAccessor< &UHIDAddon::UHID_Dev_Flags >( "UHIDDevFlags" ),
                                 InstanceAccessor< &UHIDAddon::UHID_Report_Type >( "UHIDReportType" ),
@@ -123,24 +123,6 @@ class UHIDAddon : public Napi::Addon< UHIDAddon > {
       obj.Set( "RMI", Number::New( info.Env(), BUS_RMI ) );
       obj.Set( "CEC", Number::New( info.Env(), BUS_CEC ) );
       obj.Set( "INTEL_ISHTP", Number::New( info.Env(), BUS_INTEL_ISHTP ) );
-      return obj;
-    }
-
-    Napi::Value UHID_Event_Type( const Napi::CallbackInfo& info ) {
-      Object obj = Object::New( info.Env() );
-
-      obj.Set( "DESTROY", Number::New( info.Env(), UHID_DESTROY ) );
-      obj.Set( "START", Number::New( info.Env(), UHID_START ) );
-      obj.Set( "STOP", Number::New( info.Env(), UHID_STOP ) );
-      obj.Set( "OPEN", Number::New( info.Env(), UHID_OPEN ) );
-      obj.Set( "CLOSE", Number::New( info.Env(), UHID_CLOSE ) );
-      obj.Set( "OUTPUT", Number::New( info.Env(), UHID_OUTPUT ) );
-      obj.Set( "GET_REPORT", Number::New( info.Env(), UHID_GET_REPORT ) );
-      obj.Set( "GET_REPORT_REPLY", Number::New( info.Env(), UHID_GET_REPORT_REPLY ) );
-      obj.Set( "CREATE", Number::New( info.Env(), UHID_CREATE2 ) );
-      obj.Set( "INPUT", Number::New( info.Env(), UHID_INPUT2 ) );
-      obj.Set( "SET_REPORT", Number::New( info.Env(), UHID_SET_REPORT ) );
-      obj.Set( "SET_REPORT_REPLY", Number::New( info.Env(), UHID_SET_REPORT_REPLY ) );
       return obj;
     }
 
