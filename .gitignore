@@ -3,3 +3,6 @@
 build/**
 node_modules/**
 compile_commands.json
+
+yarn-error.log
+yarn.lock
