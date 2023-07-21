@@ -27,7 +27,8 @@
     "rebuild": "cmake-js -j 16 rebuild",
     "clean": "cmake-js clean"
   },
-    "devDependencies": {
-    "@types/bindings": "^1.5.1"
+  "devDependencies": {
+    "@types/bindings": "^1.5.1",
+    "@types/node": "^20.4.2"
   }
 }

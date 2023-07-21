@@ -77,9 +77,6 @@ device.on( "setReport", ( e ) => {
 	console.log( "setReport ", e );
 } );
 
-
-console.log( device );
-
 device.open();
 
 device.create( {
@@ -89,19 +86,19 @@ device.create( {
 	vendor: 0x15d9,
 	product: 0x0a37,
 	version: 0x0001,
-	country: 0x06
+	country: 0x00
 } );
 
-var flip = false;
-setInterval( () => {
-	var buf = Buffer.alloc( 5 );
-	flip = !flip;
-	buf[ 0 ] = 0x1; // idk
-	buf[ 1 ] = ( flip ) ? 0x1 : 0x0; // mouse
-	// buf[ 2 ] = Math.random() * 100 - 50; // horiz move
-	// buf[ 3 ] = Math.random() * 100 - 50; // vert move
-	buf[ 4 ] = 0x0; // wheel
-	device.input( buf );
+// var flip = false;
+// setInterval( () => {
+// 	var buf = Buffer.alloc( 5 );
+// 	flip = !flip;
+// 	buf[ 0 ] = 0x1; // idk
+// 	buf[ 1 ] = ( flip ) ? 0x1 : 0x0; // mouse
+// 	// buf[ 2 ] = Math.random() * 100 - 50; // horiz move
+// 	// buf[ 3 ] = Math.random() * 100 - 50; // vert move
+// 	buf[ 4 ] = 0x0; // wheel
+// 	device.input( buf );
 
-}, 75 );
-
+// }, 75 );
+while ( 1 ) { }

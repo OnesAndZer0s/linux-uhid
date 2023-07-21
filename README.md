@@ -5,3 +5,4 @@ Look at `test.ts` for examples.
 ## Todo
 - [ ] Add documentation.
 - [x] Add TypeScript support.
+- [ ] Look into adding support for reading /sys/kernel/debug/hid/<dev>/rdesc
