@@ -1,6 +1,8 @@
 #include "src/UHIDDevice.h"
 
+#include <algorithm>
 #include <fcntl.h>
+#include <linux/hid.h>
 #include <linux/input.h>
 #include <linux/uhid.h>
 #include <napi.h>
@@ -85,16 +87,19 @@ void UHIDDevice::Create( const Napi::CallbackInfo& info ) {
 
   if( obj.Has( "name" ) && obj.Get( "name" ).IsString() ) {
     std::string name = obj.Get( "name" ).As< Napi::String >().Utf8Value();
+    name = name.substr( 0, 128 );
     strncpy( (char*) ev.u.create2.name, name.c_str(), sizeof( ev.u.create2.name ) );
   }
 
   if( obj.Has( "phys" ) && obj.Get( "phys" ).IsString() ) {
     std::string phys = obj.Get( "phys" ).As< Napi::String >().Utf8Value();
+    phys = phys.substr( 0, 64 );
     strncpy( (char*) ev.u.create2.phys, phys.c_str(), sizeof( ev.u.create2.phys ) );
   }
 
   if( obj.Has( "uniq" ) && obj.Get( "uniq" ).IsString() ) {
     std::string uniq = obj.Get( "uniq" ).As< Napi::String >().Utf8Value();
+    uniq = uniq.substr( 0, 64 );
     strncpy( (char*) ev.u.create2.uniq, uniq.c_str(), sizeof( ev.u.create2.uniq ) );
   }
 
@@ -115,8 +120,9 @@ void UHIDDevice::Create( const Napi::CallbackInfo& info ) {
 
   if( obj.Has( "data" ) && obj.Get( "data" ).IsBuffer() ) {
     Napi::Buffer< uint8_t > rd_data = obj.Get( "data" ).As< Napi::Buffer< uint8_t > >();
-    memcpy( ev.u.create2.rd_data, rd_data.Data(), rd_data.Length() );
-    ev.u.create2.rd_size = rd_data.Length();
+    size_t len = std::min< size_t >( rd_data.Length(), HID_MAX_DESCRIPTOR_SIZE );
+    memcpy( ev.u.create2.rd_data, rd_data.Data(), len );
+    ev.u.create2.rd_size = len;
   }
 
   Write( info.Env(), &ev );
@@ -141,12 +147,12 @@ void UHIDDevice::Input( const Napi::CallbackInfo& info ) {
     return;
 
   Napi::Buffer< uint8_t > data = info [ 0 ].As< Napi::Buffer< uint8_t > >();
-
+  size_t len = std::min< size_t >( data.Length(), UHID_DATA_MAX );
   struct uhid_event ev;
 
   ev.type = UHID_INPUT2;
-  memcpy( ev.u.input2.data, data.Data(), data.Length() );
-  ev.u.input2.size = data.Length();
+  memcpy( ev.u.input2.data, data.Data(), len );
+  ev.u.input2.size = len;
 
   Write( info.Env(), &ev );
 }
@@ -166,8 +172,9 @@ void UHIDDevice::GetReportReply( const Napi::CallbackInfo& info ) {
 
   if( obj.Has( "data" ) && obj.Get( "data" ).IsBuffer() ) {
     Napi::Buffer< uint8_t > data = obj.Get( "data" ).As< Napi::Buffer< uint8_t > >();
-    memcpy( ev.u.get_report_reply.data, data.Data(), data.Length() );
-    ev.u.get_report_reply.size = data.Length();
+    size_t len = std::min< size_t >( data.Length(), UHID_DATA_MAX );
+    memcpy( ev.u.get_report_reply.data, data.Data(), len );
+    ev.u.get_report_reply.size = len;
   }
 
   if( obj.Has( "err" ) && obj.Get( "err" ).IsNumber() )
@@ -216,8 +223,6 @@ void UHIDDevice::Poll( const Napi::CallbackInfo& info ) {
   struct pollfd* pfds;
   pfds->fd = fd;
   pfds->events = POLLIN;
-  // pfds [ 1 ].fd = fd;
-  // pfds [ 1 ].events = POLLIN;
 
   int ret = poll( pfds, 2, -1 );
   if( ret < 0 ) {
@@ -225,41 +230,19 @@ void UHIDDevice::Poll( const Napi::CallbackInfo& info ) {
     perror( "poll" );
     return;
   }
-  // if( pfds [ 0 ].revents & POLLHUP )
-  //   fprintf( stderr, "Received HUP on stdin\n" );
-  if( pfds->revents & POLLHUP )
-    fprintf( stderr, "Received HUP on uhid-cdev\n" );
 
-  // if( pfds [ 0 ].revents & POLLIN ) {
-  // keyboard
-  // fprintf( stderr, "BEEKOARDv\n" );
-
-  // char buf [ 1024 ];
-  // ssize_t ret = read( STDIN_FILENO, buf, sizeof( buf ) );
-  // if( ret < 0 ) {
-  //   perror( "read" );
-  //   return;
-  // }
-  // if( ret == 0 ) {
-  //   fprintf( stderr, "EOF on stdin\n" );
-  //   return;
-  // }
-  // fprintf( stderr, "Read %zd bytes from stdin\n", ret );
-  // }
   if( pfds->revents & POLLIN ) {
     struct uhid_event ev;
     ssize_t ret;
 
     memset( &ev, 0, sizeof( ev ) );
     ret = read( fd, &ev, sizeof( ev ) );
-    if( ret == 0 ) {
+    if( ret == 0 )
       fprintf( stderr, "Read HUP on uhid-cdev\n" );
-      // return -EFAULT;
-    } else if( ret < 0 ) {
+    else if( ret < 0 )
       Napi::Error::New( info.Env(), "Cannot read uhid-cdev: " + std::string( strerror( errno ) ) + "\n" ).ThrowAsJavaScriptException();
-    } else if( ret != sizeof( ev ) ) {
+    else if( ret != sizeof( ev ) )
       Napi::Error::New( info.Env(), "Invalid size read from uhid-dev: " + std::to_string( ret ) + " != " + std::to_string( sizeof( ev ) ) + "\n" ).ThrowAsJavaScriptException();
-    }
 
     switch( ev.type ) {
       case UHID_START:

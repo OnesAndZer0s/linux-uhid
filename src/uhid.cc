@@ -21,81 +21,15 @@ class UHIDAddon : public Napi::Addon< UHIDAddon > {
   public:
     UHIDAddon( Napi::Env env, Napi::Object exports ) {
       DefineAddon( exports, {
-                                // InstanceMethod( "open", &UHIDAddon::Open, napi_enumerable ),
-                                // InstanceMethod( "close", &UHIDAddon::Close, napi_enumerable ),
-                                // InstanceMethod( "write", &UHIDAddon::Write, napi_enumerable ),
-
-                                // InstanceAccessor< &UHIDAddon::IsOpen >( "isOpen" ),
-
-                                // InstanceAccessor< &UHIDAddon::UHID_Event_Type >( "UHIDRequestType" ),
                                 InstanceAccessor< &UHIDAddon::UHID_Bus_Type >( "UHIDBusType" ),
                                 InstanceAccessor< &UHIDAddon::UHID_Dev_Flags >( "UHIDDevFlags" ),
                                 InstanceAccessor< &UHIDAddon::UHID_Report_Type >( "UHIDReportType" ),
-
                             } );
 
       UHIDDevice::Init( env, exports );
     }
 
   private:
-    const char* path = "/dev/uhid";
-    int fd = -1;
-
-    // void Open( const Napi::CallbackInfo& info ) {
-    //   if( fd > 0 )
-    //     return;
-
-    //   std::string newPath = ( info.Length() <= 1 && info [ 0 ].IsString() ) ? info [ 0 ].As< Napi::String >().Utf8Value() : path;
-    //   fd = open( newPath.c_str(), O_RDWR | O_CLOEXEC );
-
-    //   if( fd < 0 )
-    //     Napi::Error::New( info.Env(), std::string( "Cannot open uhid " ) + newPath + ": " + strerror( errno ) + "\n" ).ThrowAsJavaScriptException();
-    // }
-
-    // void Close( const Napi::CallbackInfo& info ) {
-    //   if( fd < 0 )
-    //     return;
-    //   close( fd );
-    //   fd = -1;
-    // }
-
-    // void Write( const Napi::CallbackInfo& info ) {
-    //   if( fd < 0 )
-    //     return;
-
-    //   // get object
-    //   Object obj = info [ 0 ].As< Object >();
-    //   UHIDDevice* create = Napi::ObjectWrap< UHIDDevice >::Unwrap( obj );
-    //   // UHIDRequest* what = Napi::ObjectWrap< UHIDRequest >::Unwrap( obj );
-    //   struct uhid_event ev;
-    //   memset( &ev, 0, sizeof( ev ) );
-    //   ev = create->GetEvent();
-
-    //   fprintf( stdout, "it work\n" );
-
-    //   // has event
-    //   // if( !obj.Has( "event" ) )
-    //   // Napi::Error::New( info.Env(), std::string( "event is required" ) + "\n" ).ThrowAsJavaScriptException();
-    //   // fprintf( stdout, "event: %d\n", event.Data() );
-
-    //   // get event
-    //   // UHIDRequest event = obj.Get( "event" ).As< UHIDRequest >();
-    //   // fprintf( stdout, "event: %d\n", event->Data() );
-    //   ssize_t ret = write( fd, &ev, sizeof( ev ) );
-    //   if( ret < 0 ) {
-    //     Napi::Error::New( info.Env(), std::string( "Cannot write to uhid: " ) + strerror( errno ) + "\n" ).ThrowAsJavaScriptException();
-    //   } else if( ret != sizeof( ev ) ) {
-    //     Napi::Error::New( info.Env(), std::string( "Wrong size written to uhid: " ) + "\n" ).ThrowAsJavaScriptException();
-
-    //     // fprintf( stderr, "Wrong size written to uhid: %zd != %zu\n",
-    //     //     ret, sizeof( ev ) );
-    //     // return -EFAULT;
-    //   }
-    // }
-
-    // Napi::Value IsOpen( const Napi::CallbackInfo& info ) {
-    //   return Napi::Boolean::New( info.Env(), fd > 0 );
-    // }
 
     Napi::Value UHID_Bus_Type( const Napi::CallbackInfo& info ) {
       Object obj = Object::New( info.Env() );
