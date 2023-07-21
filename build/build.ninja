@@ -49,101 +49,13 @@ cmake_ninja_workdir = /home/tayler/Programming/node-uhid/build/
 
 build cmake_object_order_depends_target_node-uhid: phony || CMakeFiles/node-uhid.dir
 
-build CMakeFiles/node-uhid.dir/src/requests/UHIDCloseRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDCloseRequest.cc || cmake_object_order_depends_target_node-uhid
+build CMakeFiles/node-uhid.dir/src/UHIDDevice.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/UHIDDevice.cc || cmake_object_order_depends_target_node-uhid
   DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDCloseRequest.cc.o.d
+  DEP_FILE = CMakeFiles/node-uhid.dir/src/UHIDDevice.cc.o.d
   FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
   INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
   OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
-
-build CMakeFiles/node-uhid.dir/src/requests/UHIDCreateRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDCreateRequest.cc || cmake_object_order_depends_target_node-uhid
-  DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDCreateRequest.cc.o.d
-  FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
-  INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
-  OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
-
-build CMakeFiles/node-uhid.dir/src/requests/UHIDDestroyRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDDestroyRequest.cc || cmake_object_order_depends_target_node-uhid
-  DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDDestroyRequest.cc.o.d
-  FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
-  INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
-  OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
-
-build CMakeFiles/node-uhid.dir/src/requests/UHIDGetReportReplyRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDGetReportReplyRequest.cc || cmake_object_order_depends_target_node-uhid
-  DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDGetReportReplyRequest.cc.o.d
-  FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
-  INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
-  OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
-
-build CMakeFiles/node-uhid.dir/src/requests/UHIDGetReportRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDGetReportRequest.cc || cmake_object_order_depends_target_node-uhid
-  DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDGetReportRequest.cc.o.d
-  FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
-  INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
-  OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
-
-build CMakeFiles/node-uhid.dir/src/requests/UHIDInputRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDInputRequest.cc || cmake_object_order_depends_target_node-uhid
-  DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDInputRequest.cc.o.d
-  FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
-  INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
-  OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
-
-build CMakeFiles/node-uhid.dir/src/requests/UHIDOpenRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDOpenRequest.cc || cmake_object_order_depends_target_node-uhid
-  DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDOpenRequest.cc.o.d
-  FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
-  INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
-  OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
-
-build CMakeFiles/node-uhid.dir/src/requests/UHIDOutputRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDOutputRequest.cc || cmake_object_order_depends_target_node-uhid
-  DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDOutputRequest.cc.o.d
-  FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
-  INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
-  OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
-
-build CMakeFiles/node-uhid.dir/src/requests/UHIDSetReportReplyRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDSetReportReplyRequest.cc || cmake_object_order_depends_target_node-uhid
-  DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDSetReportReplyRequest.cc.o.d
-  FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
-  INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
-  OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
-
-build CMakeFiles/node-uhid.dir/src/requests/UHIDSetReportRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDSetReportRequest.cc || cmake_object_order_depends_target_node-uhid
-  DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDSetReportRequest.cc.o.d
-  FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
-  INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
-  OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
-
-build CMakeFiles/node-uhid.dir/src/requests/UHIDStartRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDStartRequest.cc || cmake_object_order_depends_target_node-uhid
-  DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDStartRequest.cc.o.d
-  FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
-  INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
-  OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
-
-build CMakeFiles/node-uhid.dir/src/requests/UHIDStopRequest.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/requests/UHIDStopRequest.cc || cmake_object_order_depends_target_node-uhid
-  DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
-  DEP_FILE = CMakeFiles/node-uhid.dir/src/requests/UHIDStopRequest.cc.o.d
-  FLAGS = -DBUILDING_NODE_EXTENSION -g -fPIC -std=gnu++20
-  INCLUDES = -I/home/tayler/.cmake-js/node-x64/v18.9.0/include/node -I/home/tayler/Programming/node-uhid -I/home/tayler/Programming/node-uhid/node_modules/node-addon-api
-  OBJECT_DIR = CMakeFiles/node-uhid.dir
-  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src/requests
+  OBJECT_FILE_DIR = CMakeFiles/node-uhid.dir/src
 
 build CMakeFiles/node-uhid.dir/src/uhid.cc.o: CXX_COMPILER__node-uhid_Debug /home/tayler/Programming/node-uhid/src/uhid.cc || cmake_object_order_depends_target_node-uhid
   DEFINES = -DNAPI_VERSION=7 -Dnode_uhid_EXPORTS
@@ -161,7 +73,7 @@ build CMakeFiles/node-uhid.dir/src/uhid.cc.o: CXX_COMPILER__node-uhid_Debug /hom
 #############################################
 # Link the shared library Debug/node-uhid.node
 
-build Debug/node-uhid.node: CXX_SHARED_LIBRARY_LINKER__node-uhid_Debug CMakeFiles/node-uhid.dir/src/requests/UHIDCloseRequest.cc.o CMakeFiles/node-uhid.dir/src/requests/UHIDCreateRequest.cc.o CMakeFiles/node-uhid.dir/src/requests/UHIDDestroyRequest.cc.o CMakeFiles/node-uhid.dir/src/requests/UHIDGetReportReplyRequest.cc.o CMakeFiles/node-uhid.dir/src/requests/UHIDGetReportRequest.cc.o CMakeFiles/node-uhid.dir/src/requests/UHIDInputRequest.cc.o CMakeFiles/node-uhid.dir/src/requests/UHIDOpenRequest.cc.o CMakeFiles/node-uhid.dir/src/requests/UHIDOutputRequest.cc.o CMakeFiles/node-uhid.dir/src/requests/UHIDSetReportReplyRequest.cc.o CMakeFiles/node-uhid.dir/src/requests/UHIDSetReportRequest.cc.o CMakeFiles/node-uhid.dir/src/requests/UHIDStartRequest.cc.o CMakeFiles/node-uhid.dir/src/requests/UHIDStopRequest.cc.o CMakeFiles/node-uhid.dir/src/uhid.cc.o
+build Debug/node-uhid.node: CXX_SHARED_LIBRARY_LINKER__node-uhid_Debug CMakeFiles/node-uhid.dir/src/UHIDDevice.cc.o CMakeFiles/node-uhid.dir/src/uhid.cc.o
   LANGUAGE_COMPILE_FLAGS = -DBUILDING_NODE_EXTENSION -g
   OBJECT_DIR = CMakeFiles/node-uhid.dir
   POST_BUILD = :
@@ -219,14 +131,14 @@ build all: phony Debug/node-uhid.node
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/local/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Clang-C.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Clang-CXX.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Clang.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-Clang-C.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-Clang-CXX.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.1/CMakeCCompiler.cmake CMakeFiles/3.23.1/CMakeCXXCompiler.cmake CMakeFiles/3.23.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/local/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.1/CMakeCCompiler.cmake CMakeFiles/3.23.1/CMakeCXXCompiler.cmake CMakeFiles/3.23.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt /usr/local/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Clang-C.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Clang-CXX.cmake /usr/local/share/cmake-3.23/Modules/Compiler/Clang.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-Clang-C.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-Clang-CXX.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.1/CMakeCCompiler.cmake CMakeFiles/3.23.1/CMakeCXXCompiler.cmake CMakeFiles/3.23.1/CMakeSystem.cmake: phony
+build ../CMakeLists.txt /usr/local/share/cmake-3.23/Modules/CMakeCInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /usr/local/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /usr/local/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /usr/local/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /usr/local/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /usr/local/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /usr/local/share/cmake-3.23/Modules/Compiler/GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /usr/local/share/cmake-3.23/Modules/Platform/Linux.cmake /usr/local/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.1/CMakeCCompiler.cmake CMakeFiles/3.23.1/CMakeCXXCompiler.cmake CMakeFiles/3.23.1/CMakeSystem.cmake: phony
 
 
 #############################################

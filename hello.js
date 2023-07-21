@@ -1,4 +1,6 @@
 var addon = require('bindings')('node-uhid');
+var readline = require('readline');
+var EventEmitter = require('events').EventEmitter;
 
 const rdesc = [
 	0x05, 0x01,	/* USAGE_PAGE (Generic Desktop) */
@@ -48,23 +50,113 @@ const rdesc = [
 ];
 
 try {
-  // addon.open();
-	var createReq = new addon.UHIDCreateRequest();
-	
-	createReq.name = "node-uhid-device";
-	createReq.data = Buffer.from(rdesc);
-	createReq.bus = addon.UHIDBusType.USB;
-	createReq.vendor = 0x15d9;
-	createReq.product = 0x0a37;
-	createReq.version = 0x0001;
-	createReq.country = 0x00;
 
+	var device = new addon.UHIDDevice();
+	const emitter = new EventEmitter()
+
+	emitter.on("start", (e)=>{
+		console.log("start ", e);
+	});
+
+	emitter.on("stop", ()=>{
+		console.log("stop")
+	});
+
+	emitter.on("open", ()=>{
+		console.log("open")
+	});
+
+	emitter.on("close", ()=>{
+		console.log("close")
+	});
+
+	emitter.on("output",(e)=>{
+		console.log("output ", e)
+	});
+
+	emitter.on("getReport", (e)=>{
+		console.log("getReport ", e)
+	});
+
+	emitter.on("setReport", (e)=>{
+		console.log("setReport ", e)
+	});
+
+	device.eventEmitter = emitter.emit.bind(emitter);
+
+	device.open();
+
+	device.create({
+		name: "node-uhid-device",
+		data: Buffer.from(rdesc),
+		bus: addon.UHIDBusType.USB,
+		vendor: 0x15d9,
+		product: 0x0a37,
+		version: 0x0001,
+		country: 0x06
+	});
+
+
+	device.poll();
+
+	var flip = false;
+	setInterval(()=>{
+		var buf = Buffer.alloc(5);
+		flip = !flip;
+		buf[0] = 0x1; // idk
+		buf[1] = (flip)?0x1:0x0; // mouse
+		// buf[2] = Math.random()*100-50; // horiz move
+		// buf[3] = Math.random()*100-50; // vert move
+		buf[4] = 0x0; // wheel
+		device.input(buf);
 	
-	addon.write(createReq);
+
+	},75);
+	// device.destroy();
 
 	// var destroyReq = new addon.UHIDDestroyRequest();
 	// destroyReq.devNum = createReq.devNum;
 	// addon.write(destroyReq);
+
+	// var rl = readline.createInterface({
+	// 	input: process.stdin,
+	// 	output: process.stdout
+	//  });
+	 
+	//  var waitForUserInput = function() {
+	// 	 rl.question("Command: ", function(answer) {
+	// 		switch (answer) {
+	// 			case "exit":
+	// 			case "e":
+	// 				rl.close();
+	// 				device.destroy();
+	// 				return;
+	// 				break;
+	// 			case "poll":
+	// 			case "p":
+	// 				device.poll();
+	// 				break;
+	// 			case "input":
+	// 			case "i":
+	// 				var buf = Buffer.alloc(5);
+	// 				buf[0] = 0x1; // idk
+	// 				buf[1] = 0x0; // mouse
+	// 				buf[2] = 0; // horiz move
+	// 				buf[3] = -127; // vert move
+	// 				buf[4] = 0x0; // wheel
+	// 				device.input(buf);
+
+	// 					break;
+					
+	// 			default:
+	// 				console.log("Unknown command");
+	// 		};
+	// 		waitForUserInput();
+
+	// 	 });
+	//  }
+	//  waitForUserInput();
+
 }
 catch (e){
 console.log(e);
