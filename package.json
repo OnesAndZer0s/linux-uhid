@@ -2,6 +2,10 @@
   "name": "node-uhid",
   "version": "0.0.0",
   "description": "NodeJS Bindings for Linux's UHID kernel module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OnesAndZer0s/node-uhid.git"
+  },
   "dependencies": {
     "bindings": "~1.2.1",
     "node-addon-api": "latest"
