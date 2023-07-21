@@ -1,6 +1,6 @@
 {
   "name": "linux-uhid",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NodeJS Bindings for Linux's UHID kernel module",
   "repository": {
     "type": "git",
