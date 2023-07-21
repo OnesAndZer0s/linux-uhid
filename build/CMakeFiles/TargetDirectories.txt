@@ -1,3 +1,0 @@
-/home/tayler/Programming/node-uhid/build/CMakeFiles/node-uhid.dir
-/home/tayler/Programming/node-uhid/build/CMakeFiles/edit_cache.dir
-/home/tayler/Programming/node-uhid/build/CMakeFiles/rebuild_cache.dir
