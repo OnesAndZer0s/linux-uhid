@@ -1,11 +1,15 @@
 {
   "name": "linux-uhid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NodeJS Bindings for Linux's UHID kernel module",
   "repository": {
     "type": "git",
     "url": "https://github.com/OnesAndZer0s/linux-uhid.git"
   },
+  "keywords": [
+    "uhid",
+    "linux"
+  ],
   "main": "build/UHIDDevice.js",
   "types": "build/UHIDDevice.d.ts",
   "author": "OnesAndZer0s",
