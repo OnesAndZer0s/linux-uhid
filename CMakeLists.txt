@@ -3,7 +3,7 @@ cmake_policy(SET CMP0042 NEW)
 set (CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 
-project (node-uhid)
+project (linux-uhid)
 include_directories(${CMAKE_JS_INC})
 include_directories(${CMAKE_SOURCE_DIR})
 file(GLOB_RECURSE SOURCE_FILES "**.cc")

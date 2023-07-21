@@ -1,5 +1,5 @@
 import addon from 'bindings';
-const uhid: any = addon( 'node-uhid' );
+const uhid: any = addon( 'linux-uhid' );
 import { EventEmitter } from 'events';
 
 

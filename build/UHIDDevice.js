@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UHIDDevice = exports.UHIDReportType = exports.UHIDDevFlags = exports.UHIDBusType = void 0;
 const bindings_1 = __importDefault(require("bindings"));
-const uhid = (0, bindings_1.default)('node-uhid');
+const uhid = (0, bindings_1.default)('linux-uhid');
 const events_1 = require("events");
 var UHIDBusType;
 (function (UHIDBusType) {
