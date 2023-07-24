@@ -1,5 +1,6 @@
 # `linux-uhid` - NodeJS bindings for Linux's UHID interface
 [![npm version](https://badge.fury.io/js/linux-uhid.svg)](https://badge.fury.io/js/linux-uhid) [![License: GNU](https://img.shields.io/badge/License-GNU-blue.svg)](https://opensource.org/licenses/GNU)
+
 `linux-uhid` is a NodeJS module that provides bindings for Linux's UHID interface. It allows you to create virtual HID devices and send input reports to them.
 
 **NOTE:** Module *has* to be used with elevated privileges (root)!
