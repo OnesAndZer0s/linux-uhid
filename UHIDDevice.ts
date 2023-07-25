@@ -3,6 +3,9 @@ const uhid: any = addon( 'linux-uhid' );
 import { EventEmitter } from 'events';
 
 
+/**
+ * Definitions of Bus Types
+ */
 export enum UHIDBusType {
   PCI = uhid.UHIDBusType.PCI,
   ISAPNP = uhid.UHIDBusType.ISAPNP,
@@ -40,6 +43,7 @@ export enum UHIDReportType {
   INPUT = uhid.UHIDReportType.INPUT_REPORT,
 }
 
+
 export type UHIDStartEvent = {
   devFlags: UHIDDevFlags
 };
@@ -61,8 +65,16 @@ export type UHIDSetReportEvent = {
   rtype: UHIDReportType
 };
 
+
+/**
+ * UHID Device Class
+ * 
+ * @class UHIDDevice
+ */
 export class UHIDDevice extends uhid.UHIDDevice {
+  /** @hidden */
   private eventEmitter: any;
+  /** @hidden */
   private eE = new EventEmitter();
 
   constructor () {
@@ -106,6 +118,9 @@ export class UHIDDevice extends uhid.UHIDDevice {
     this.eE.off( event, listener );
   }
 
+  /**
+   * Create a new UHID Device, with given parameters.
+   */
   create ( options: {
     name: string,
     data: Buffer,
@@ -118,30 +133,52 @@ export class UHIDDevice extends uhid.UHIDDevice {
     super.create( options );
   }
 
+  /**
+   * Destroy the UHID Device. Closes device if open.
+   */
   destroy (): void {
     super.destroy();
   }
 
+  /**
+   * Send an input report to the device
+   */
   input ( data: Buffer ): void {
     super.input( data );
   }
 
+  /**
+   * Send a feature request report to the device.
+   */
   getReportReply ( options: { id: number, err: number, data: Buffer } ): void {
     super.getReportReply( options );
   }
 
+  /**
+   * Send a feature report to the device.
+   */
   setReportReply ( options: { id: number, err: number } ): void {
     super.setReportReply( options );
   }
 
+  /**
+   * Poll device for any new events.
+   */
   poll (): void {
     super.poll();
   }
 
+  /**
+   * Opens communication with the device.
+   * This has to be run before any other commands.
+   */
   open (): void {
     super.open();
   }
 
+  /**
+   * Closes communication with the device.
+   */
   close (): void {
     super.close();
   }

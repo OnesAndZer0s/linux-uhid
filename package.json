@@ -1,6 +1,6 @@
 {
   "name": "linux-uhid",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "NodeJS Bindings for Linux's UHID kernel module",
   "repository": {
     "type": "git",
@@ -25,10 +25,12 @@
     "build": "cmake-js -j 16 build",
     "rebuild:dev": "cmake-js -j 16 rebuild -D",
     "rebuild": "cmake-js -j 16 rebuild",
-    "clean": "cmake-js clean"
+    "clean": "cmake-js clean",
+    "docgen" : "typedoc UHIDDevice.ts --out docs"
   },
   "devDependencies": {
     "@types/bindings": "^1.5.1",
-    "@types/node": "^20.4.2"
+    "@types/node": "^20.4.2",
+    "typedoc": "^0.24.8"
   }
 }
